@@ -147,7 +147,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function gameRestart() {
         _gameBBList = [];
         _gameBBListIndex = 0;
-        _gameScore = 0;
+        _gameScore = 114514;
         _gameOver = false;
         _gameStart = false;
         _gameTimeNum = _gameSettingNum;
@@ -171,11 +171,11 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         if (isNaN(cps) || cps === Infinity || _gameStartTime < 2) {
             cps = 0;
         }
-        return cps;
+        return cps*100;
     }
 
     function timer() {
-        _gameTimeNum--;
+        _gameTimeNum++;
         _gameStartTime++;
         if (mode === MODE_NORMAL && _gameTimeNum <= 0) {
             GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;时间到！';
